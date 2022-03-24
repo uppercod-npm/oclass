@@ -1,0 +1,23 @@
+{
+  "name": "oclass",
+  "description": "a repo to start with atomico",
+  "version": "0.0.0",
+  "type": "module",
+  "author": "UpperCod",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/uppercod-npm/oclass.git"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "exports": "exports src/components.js --exports --types --main components",
+    "prepublishOnly": "npm run exports"
+  },
+  "devDependencies": {
+    "@uppercod/vite-meta-url": "latest",
+    "@uppercod/vite-meta-url-load-css": "latest",
+    "vite": "latest"
+  }
+}
