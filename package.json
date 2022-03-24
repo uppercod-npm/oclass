@@ -21,10 +21,10 @@
     "@uppercod/vite-meta-url-load-css": "latest",
     "vite": "latest"
   },
-  "main": "./dist/oclass.js",
-  "module": "./dist/oclass.js",
+  "main": "./oclass.js",
+  "module": "./oclass.js",
   "exports": {
-    ".": "./dist/oclass.js",
+    ".": "./oclass.js",
     "./css": "./css.css"
   }
 }
