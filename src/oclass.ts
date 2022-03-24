@@ -67,9 +67,10 @@ class OClass {
   };
 
   sheet: CSSStyleSheet;
-  media: Media;
+  media: Media = {};
 
   constructor(target: HTMLStyleElement) {
+    //@ts-ignore
     this.sheet = target.sheet;
     Object.assign(
       this,
@@ -81,7 +82,7 @@ class OClass {
   }
   generate() {
     const { cssRules } = this.sheet;
-    const media = {};
+    const media: Media = {};
     let cssProps = "";
 
     for (let i = 0; i < cssRules.length; i++) {
@@ -95,9 +96,12 @@ class OClass {
 
       if (test) {
         const [, prefix, option] = test;
-        if (!this[option]) continue;
+        if (!(option in this)) continue;
+
+        //@ts-ignore
         for (let prop in this[option]) {
           const cssProp = `--${option}-${prop}`;
+          //@ts-ignore
           cssProps += `${cssProp}: ${this[option][prop]};\n`;
           this.addRule(
             selectorText.replace(prefix, prop) +
