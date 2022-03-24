@@ -12,10 +12,11 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "exports": "exports src/components.js --exports --types --main components",
+    "exports": "exports src/* --exports --types --main oclass --format iife",
     "prepublishOnly": "npm run exports"
   },
   "devDependencies": {
+    "@atomico/exports": "^0.23.0",
     "@uppercod/vite-meta-url": "latest",
     "@uppercod/vite-meta-url-load-css": "latest",
     "vite": "latest"

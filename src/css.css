@@ -1,0 +1,108 @@
+.grid {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.cols\.--cols {
+  grid-template-columns: repeat(var(--cols), 1fr);
+}
+
+.span {
+  grid-column: 1 / none;
+}
+
+.span\.--span {
+  grid-column: auto / span var(--span);
+}
+
+.gap\.--sizes {
+  gap: var(--sizes);
+}
+
+.gap\.y\.--sizes {
+  row-gap: var(--sizes);
+}
+
+.gap\.x\.--sizes {
+  column-gap: var(--sizes);
+}
+
+.space\.--sizes {
+  padding: var(--sizes);
+}
+
+.space\.x\.--sizes {
+  padding-left: var(--sizes);
+  padding-right: var(--sizes);
+}
+
+.space\.y\.--sizes {
+  padding-top: var(--sizes);
+  padding-bottom: var(--sizes);
+}
+
+.color\.--colors {
+  color: var(--colors);
+}
+
+.bgcolor\.--colors {
+  background-color: var(--colors);
+}
+
+.font\.size\.--sizes {
+  font-size: var(--sizes);
+}
+
+.font\.--weight {
+  font-weight: var(--weight);
+}
+
+.shadow\.--shadows {
+  box-shadow: var(--shadows);
+}
+
+.radius\.--radius {
+  border-radius: var(--radius);
+}
+
+.border\.--borders {
+  border: var(--borders);
+}
+
+.justify\.--content {
+  justify-content: var(--content);
+}
+
+.align\.--content {
+  align-items: var(--content);
+}
+
+.align\.content\.--content {
+  align-content: var(--content);
+}
+
+.content\.--content {
+  place-content: var(--content);
+}
+
+.self\.--content {
+  place-content: var(--content);
+}
+
+.fit\.--fit {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: var(--fit);
+}
+
+.dir\.--dir {
+  flex-direction: var(--dir);
+}
+
+.text\.--textAlign {
+  text-align: var(--textAlign);
+}
