@@ -25,6 +25,6 @@
   "module": "./oclass.js",
   "exports": {
     ".": "./oclass.js",
-    "./css": "./css.css"
+    "./classes": "./classes.css"
   }
 }

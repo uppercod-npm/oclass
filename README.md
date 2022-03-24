@@ -9,7 +9,7 @@ OClass facilitates the generation of layout, themes and prototypes, OSClass is a
 <script src="http://unpkg.com/oclass"></script>
 <link
   rel="stylesheet"
-  href="http://unpkg.com/oclass/css"
+  href="http://unpkg.com/oclass/classes.css"
   data-config='{
       "colors":{
         "primary":"black",
