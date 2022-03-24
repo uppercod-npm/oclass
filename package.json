@@ -12,7 +12,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "exports": "exports src/* --minify --dist .",
+    "exports": "exports src/* --minify --meta-url css --dist .",
     "prepublishOnly": "npm run exports"
   },
   "devDependencies": {
