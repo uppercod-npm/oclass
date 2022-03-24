@@ -12,7 +12,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "exports": "exports src/* --exports --types --main oclass --format iife --meta-url css",
+    "exports": "exports src/* --exports --types --main oclass --format iife --meta-url css --global-name OClass",
     "prepublishOnly": "npm run exports"
   },
   "devDependencies": {
