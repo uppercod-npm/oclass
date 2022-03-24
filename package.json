@@ -16,7 +16,7 @@
     "prepublishOnly": "npm run exports"
   },
   "devDependencies": {
-    "@atomico/exports": "^0.23.0",
+    "@atomico/exports": "^0.24.0",
     "@uppercod/vite-meta-url": "latest",
     "@uppercod/vite-meta-url-load-css": "latest",
     "vite": "latest"
