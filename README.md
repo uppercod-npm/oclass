@@ -22,6 +22,6 @@ OClass facilitates the generation of layout, themes and prototypes, OSClass is a
         "1": ".5rem"
       }
     }'
-  onload="new Oclass(event.target)"
+  onload="OClass(event.target)"
 />
 ```
