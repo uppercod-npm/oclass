@@ -1,5 +1,5 @@
-((self, oClassConfig) => {
-  if (self.oClass) return;
+((self, OClassConfig) => {
+  if (self.OClass) return;
 
   /**
    *
@@ -27,9 +27,9 @@
    *
    * @param {HTMLStyleElement} target
    */
-  function oClass({ sheet, dataset }) {
+  function OClass({ sheet, dataset }) {
     const config = {
-      ...oClass.config,
+      ...OClass.config,
       ...JSON.parse(dataset.config || "{}"),
     };
 
@@ -74,12 +74,12 @@
     addRule(sheet, `:host,:root{${cssProps}}`);
   }
 
-  oClass.config = oClassConfig;
+  OClass.config = OClassConfig;
 
-  self.oClass = oClass;
+  self.OClass = OClass;
 })(
   self,
-  self.oClassConfig || {
+  self.OClassConfig || {
     cols: {
       2: 2,
       4: 4,

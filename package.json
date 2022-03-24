@@ -1,6 +1,6 @@
 {
   "name": "oclass",
-  "description": "a repo to start with atomico",
+  "description": "OClass facilitates the generation of layout, themes and prototypes",
   "version": "0.0.0",
   "type": "module",
   "author": "UpperCod",
@@ -12,7 +12,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "exports": "exports src/* --exports --main oclass   --minify",
+    "exports": "exports src/* --minify",
     "prepublishOnly": "npm run exports"
   },
   "devDependencies": {
@@ -20,5 +20,11 @@
     "@uppercod/vite-meta-url": "latest",
     "@uppercod/vite-meta-url-load-css": "latest",
     "vite": "latest"
+  },
+  "main": "./dist/oclass.js",
+  "module": "./dist/oclass.js",
+  "exports": {
+    ".": "./dist/oclass.js",
+    "./css": "./css.css"
   }
 }
