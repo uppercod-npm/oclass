@@ -26,11 +26,12 @@
   /**
    *
    * @param {HTMLStyleElement} target
+   * @param {Object<string,Object<string,string>>} theme
    */
-  function OClass({ sheet, dataset }) {
-    const config = {
+  function OClass({ sheet }, options) {
+    const { prefix = "", ...config } = {
       ...OClass.config,
-      ...JSON.parse(dataset.config || "{}"),
+      ...options,
     };
 
     const { cssRules } = sheet;
@@ -49,18 +50,18 @@
       const test = selectorText.match(/\.(--([\w]+))$/);
 
       if (test) {
-        const [, prefix, option] = test;
+        const [, id, option] = test;
         if (!config[option]) continue;
 
         for (let prop in config[option]) {
-          const cssProp = `--${option}-${prop}`;
+          const cssProp = `--${prefix}${option}-${prop}`;
           cssProps += `${cssProp}: ${config[option][prop]};\n`;
           addRule(
             sheet,
-            selectorText.replace(prefix, prop) +
+            selectorText.replace(id, prop) +
               cssText
                 .replace(selectorText, "")
-                .replace(RegExp(prefix, "g"), cssProp)
+                .replace(RegExp(id, "g"), cssProp)
           );
         }
       } else {
@@ -77,68 +78,4 @@
   OClass.config = OClassConfig;
 
   self.OClass = OClass;
-})(
-  self,
-  self.OClassConfig || {
-    cols: {
-      2: 2,
-      4: 4,
-      6: 6,
-      8: 8,
-    },
-    span: {
-      1: 1,
-      2: 2,
-      3: 3,
-      4: 4,
-      5: 5,
-      6: 6,
-      7: 7,
-      8: 8,
-    },
-    sizes: {
-      1: "8px",
-      2: "16px",
-      3: "20px",
-      4: "28px",
-      5: "32px",
-      6: "44px",
-      7: "60px",
-    },
-    media: {
-      xl: "(min-width: 1280px)",
-      l: "(min-width: 1024px)",
-      m: "(min-width: 768px)",
-      s: "(min-width: 640px)",
-    },
-    weight: {
-      light: 300,
-      regular: 400,
-      medium: 500,
-      bold: 700,
-      black: 900,
-    },
-    content: {
-      start: "start",
-      end: "end",
-      stretch: "stretch",
-      between: "space-between",
-      around: "space-around",
-      evenly: "space-evenly",
-      center: "center",
-    },
-    fit: {
-      cover: "cover",
-      contain: "contain",
-    },
-    dir: {
-      col: "columns",
-      row: "row",
-    },
-    textAlign: {
-      left: "left",
-      right: "right",
-      center: "center",
-    },
-  }
-);
+})(self, self.OClassConfig);
